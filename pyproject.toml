@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbporter"
+version = "0.1.0"
+description = "Any-to-any database porter via CSV/JSON intermediate formats"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "You" }]
+
+dependencies = [
+    "SQLAlchemy>=2.0,<3",
+    "pandas>=2.1",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "python-dotenv>=1.0",
+    "PyYAML>=6.0",
+    # драйверы БД
+    "psycopg[binary]>=3.1",        # PostgreSQL
+    "PyMySQL>=1.1",                # MySQL / MariaDB
+    "pyodbc>=5.1",                 # MSSQL / любой ODBC
+]
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.6"]
+oracle = ["oracledb>=2.0"]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=4.1",
+    "pytest-qt>=4.4",
+    "ruff>=0.4",
+    "mypy>=1.10",
+]
+
+[project.scripts]
+dbporter     = "dbporter.cli:main"
+dbporter-gui = "dbporter.gui.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
