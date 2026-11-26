@@ -1,4 +1,4 @@
-﻿# 🚀 DbPorter
+﻿# DbPorter
 
 **DbPorter** — десктопный инструмент для переноса таблиц между разными СУБД через SQLAlchemy
 и pandas. PostgreSQL, MySQL/MariaDB, MS SQL, SQLite и Oracle — в любом направлении,
@@ -13,7 +13,7 @@
 
 ---
 
-## ✨ Что умеет
+##  Что умеет
 
 - **Единое ядро на SQLAlchemy 2.0** — PostgreSQL (`psycopg`), MySQL/MariaDB (`pymysql`),
   SQLite (встроенный), MS SQL (`pyodbc`), Oracle (`oracledb`, опционально).
@@ -30,7 +30,7 @@
 
 ---
 
-## 🖥 Быстрый старт
+## Быстрый старт
 
 Нужен Python 3.10+ и pip.
 
@@ -66,7 +66,7 @@ python -m dbporter.gui.app
 
 ---
 
-## 🧭 Как пользоваться GUI
+## Как пользоваться GUI
 
 1. В левой панели выберите тип БД и заполните параметры подключения.
 2. Нажмите **«Подключиться»** — появится список таблиц.
@@ -81,7 +81,7 @@ python -m dbporter.gui.app
 
 ---
 
-## ⌨️ CLI
+## CLI
 
 ```bash
 # Показать таблицы источника
@@ -101,7 +101,7 @@ dbporter copy --config config.yaml --table users --if-exists append
 
 ---
 
-## ⚙️ Конфиг
+## Конфиг
 
 ```yaml
 source:
@@ -142,7 +142,7 @@ source:
 
 ---
 
-## 🧱 Структура проекта
+## Структура проекта
 
 ```text
 Dbporter/
@@ -176,7 +176,7 @@ ruff check src tests
 
 ---
 
-## ⚠️ Ограничения
+## Ограничения
 
 - Типы данных конвертируются через generic-типы SQLAlchemy; экзотические типы
   конкретного диалекта могут не скомпилироваться в приёмнике — тогда используется
@@ -194,7 +194,7 @@ ruff check src tests
 
 ---
 
-## 🗺 Roadmap
+## Roadmap
 
 - [x] Фоновые операции (`QThread`) — интерфейс не зависает.
 - [x] CLI и YAML-конфиги.
@@ -207,6 +207,6 @@ ruff check src tests
 
 ---
 
-## 📄 Лицензия
+## Лицензия
 
 MIT.
