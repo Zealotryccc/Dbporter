@@ -195,6 +195,4 @@ ruff check src tests
 ---
 
 
-## Лицензия
 
-MIT.
